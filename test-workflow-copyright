@@ -1,0 +1,20 @@
+name: Copyright
+
+on:
+  pull_request:
+
+jobs:
+  copyright-check:
+    uses: hpe-actions/copyright/.github/workflows/copyright.yml@<VERSION>
+    
+fix:
+  description: "Whether to run copyright-tool with --fix"
+  default: false
+  required: false
+  type: boolean
+
+pull_role:
+  description: "Role to pull the copyright-tool docker image"
+  default: arn:aws:iam::657273346644:role/github/oidc/ecr-readonly
+  required: false
+  type: string   
